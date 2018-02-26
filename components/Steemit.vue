@@ -82,6 +82,10 @@ export default {
       display: block;
       margin: 0 auto;
     }
+
+    .table {
+      color: $palette-body;
+    }
   }
 }
 

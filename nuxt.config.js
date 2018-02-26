@@ -17,7 +17,11 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
-  plugins: ['~/plugins/formatNumbers.js'],
+  plugins: [
+    '~/plugins/formatNumbers', 
+    '~/plugins/buefy',
+    {src: '~/plugins/highcharts', ssr: false}
+  ],
   /*
   ** Build configuration
   */
@@ -25,6 +29,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
+    vendor: ['highcharts'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -33,6 +38,11 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+    },
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': false
       }
     }
   }

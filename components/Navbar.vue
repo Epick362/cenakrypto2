@@ -2,11 +2,11 @@
   <nav class="navbar">
     <div class="container">
       <div class="navbar-brand">
-        <!-- <router-link class="navbar-item brand-navbar-item" to="/">
+        <nuxt-link class="navbar-item brand-navbar-item" to="/">
           <span class="icon">
             <img src="../assets/logo.png" alt="cenakrypto.sk">
           </span>
-        </router-link> -->
+        </nuxt-link>
         <label class="navbar-burger burger" for="nav-toggle-state">
           <span />
           <span />
@@ -19,9 +19,9 @@
       <div class="navbar-menu">
         <div class="navbar-start">
           <a href="/#faq" class="navbar-item">Čo sú to kryptomeny?</a>
-          <router-link class="navbar-item" :to="{name: 'list'}">
+          <nuxt-link class="navbar-item" :to="{name: 'list'}">
             Zoznam kryptomien
-          </router-link>
+          </nuxt-link>
         </div>
         <div class="navbar-end">
           <span class="navbar-item">
@@ -59,14 +59,14 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { API_ROOT } from '@/constants'
-import Autocomplete from '@/components/Autocomplete'
-import CoinIcon from '@/components/CoinIcon'
-import { autocompleteBus } from '@/components/autocompleteBus'
+import axios from "axios";
+import { API_ROOT } from "@/constants";
+import Autocomplete from "@/components/Autocomplete";
+import CoinIcon from "@/components/CoinIcon";
+import { autocompleteBus } from "@/components/autocompleteBus";
 
 export default {
-  name: 'navbar',
+  name: "navbar",
   data() {
     return {
       coins: []
@@ -75,45 +75,49 @@ export default {
   created() {
     this.loadCoins();
 
-    autocompleteBus.$on('autocomplete-select', (selectedValue) => {
-      this.$router.replace({name: 'coin', params: {coin: selectedValue}});
+    autocompleteBus.$on("autocomplete-select", selectedValue => {
+      this.$router.replace({ name: "coin", params: { coin: selectedValue } });
     });
   },
   methods: {
     loadCoins() {
-      return axios.get(`${API_ROOT}/coins`)
-      .then((response) => {
+      return axios.get(`${API_ROOT}/coins`).then(response => {
         this.coins = response.data;
-      })
+      });
     },
     show() {
-      this.$modal.show('dialog', {
-        title: 'Upozornenie!',
-        text: 'Investovanie do kryptomien so sebou prináša svoje riziká. Nepreberám žiadnu zodpovednosť za možné finančné straty.',
+      this.$modal.show("dialog", {
+        title: "Upozornenie!",
+        text:
+          "Investovanie do kryptomien so sebou prináša svoje riziká. Nepreberám žiadnu zodpovednosť za možné finančné straty.",
         buttons: [
-          { 
+          {
             title: '<span style="color: #FF4400">Zrušiť</span>'
           },
-          { 
-            title: '<span style="color: #20bc56;font-size: 0.9rem;font-weight:bold;">Rozumiem, pokračovať</span>',
+          {
+            title:
+              '<span style="color: #20bc56;font-size: 0.9rem;font-weight:bold;">Rozumiem, pokračovať</span>',
             default: true,
             handler: () => {
-              window.open('https://www.coinbase.com/join/594d5ece3f676a05e495611b', '_blank');
+              window.open(
+                "https://www.coinbase.com/join/594d5ece3f676a05e495611b",
+                "_blank"
+              );
             } // Button click handler
           }
         ]
-      })
+      });
     }
   },
   components: {
     Autocomplete,
     CoinIcon
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/variables';
+@import "../assets/variables";
 
 #nav-toggle-state {
   display: none;
@@ -138,7 +142,7 @@ export default {
   color: $palette-text;
   border: none;
   transition: 300ms all ease-in-out;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 
   &:hover {
     background: darken($green, 15%);

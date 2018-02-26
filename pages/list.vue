@@ -49,14 +49,13 @@
               </b-table-column>
 
               <b-table-column field="long" label="Názov">
-                <router-link :to="{name: 'coin', params: {coin: props.row.short}}">
+                <nuxt-link :to="{name: 'coin-symbol', params: {symbol: props.row.short}}" append>
                   <coin-icon
                     className="currency-icon"
                     :symbol="props.row.short">
                   </coin-icon>
                   {{ props.row.long }}
-
-                </router-link>
+                </nuxt-link>
               </b-table-column>
 
               <b-table-column field="mktcap" label="Kapitalizácia" numeric sortable>

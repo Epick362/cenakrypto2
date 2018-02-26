@@ -84,9 +84,7 @@
         </span>
         
       </h2>
-      <no-ssr>
-        <highstock :options="chartOptions" ref="chartRef"></highstock>
-      </no-ssr>
+      <highstock :options="chartOptions" ref="chartRef"></highstock>
     </section>
 
     <page-footer></page-footer>

@@ -15,11 +15,11 @@
             Aktuálna cena kryptomien
           </h2>
           <div class="columns top-currencies">
-            <router-link
+            <nuxt-link
               class="column currency-box"
               v-for="(currency, index) of topCurrencies"
               :key="currency.short"
-              :to="{name: 'coin', params: {coin: currency.short}}"
+              :to="{name: 'coin-symbol', params: {symbol: currency.short}}"
             >
               <div class="currency-name">
                 <coin-icon
@@ -48,18 +48,18 @@
                   </span>
                 </pretty-change-perc>
               </div>
-            </router-link>
+            </nuxt-link>
           </div>
 
           <h3 class="title">
             Ďalšie kryptomeny
           </h3>
           <div class="columns small-currencies">
-            <router-link
+            <nuxt-link
               class="column currency-box-small"
               v-for="currency of smallCurrencies"
               :key="currency.short"
-              :to="{name: 'coin', params: {coin: currency.short}}"
+              :to="{name: 'coin-symbol', params: {symbol: currency.short}}"
             >
               <div class="currency-name">
                 <coin-icon
@@ -82,16 +82,16 @@
                   </span>
                 </pretty-change-perc>
               </div>
-            </router-link>
+            </nuxt-link>
           </div>
 
-          <router-link
+          <nuxt-link
             class="button primary-button"
             :to="{name: 'list'}"
           >
             <i class="fas fa-list-ol"></i>
             Zobraziť všetky kryptomeny
-          </router-link>
+          </nuxt-link>
         </div>
       </div>
     </section>
