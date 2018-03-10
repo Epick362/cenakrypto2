@@ -77,10 +77,7 @@
           <b v-bind:class="[priceStats.change >= 0 ? 'green' : 'red']">
             {{ priceStats.change | formatNumbers(2) }} <span class="muted-text">€</span>
           </b>
-          <pretty-change-perc :percent="priceStats.change_percent">
-            <span slot="pre">(</span>
-            <span slot="post">)</span>
-          </pretty-change-perc>
+          <pretty-change-perc :percent="priceStats.change_percent"></pretty-change-perc>
         </span>
         
       </h2>
@@ -106,6 +103,23 @@ const shortNumberAbbr = new numAbbr([' tisíc', ' m.', ' mld.', ' bilion'])
 
 export default {
   name: 'Coin',
+
+  head() {
+    let title;
+  
+    if (this.coinData.price) {
+      title = `1 ${this.$route.params.symbol} = ${this.coinData.price} €`;
+    } else {
+      title = `Aktuálna hodnota ${this.$route.params.symbol}`;
+    }
+
+    return {
+      title: title,
+      meta: [
+        { hid: 'description', name: 'description', content: `Získajte prehľad o kryptomene ${this.$route.params.symbol}. Aktuálna hodnota, grafy a ďalšie dôležité informácie.` }
+      ]
+    }
+  },
 
   data() {
     return {
@@ -410,7 +424,7 @@ export default {
     vertical-align: middle;
     width: 56px;
     margin-top: -6px;
-    // margin-right: 5px;
+    margin-right: 1rem;
   }
 
   .currency-short {
@@ -436,6 +450,7 @@ export default {
   .currency-change {
     font-weight: 300;
     font-size: 2rem;
+    margin-left: 0.5rem;
   }
 }
 

@@ -7,7 +7,7 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="brand-heading">
-            <img class="brand-icon" src="../assets/logo.png" alt="cenakrypto.sk">
+            <img class="brand-icon" src="/logo.png" alt="cenakrypto.sk">
             cenakrypto.sk
           </h1>
 

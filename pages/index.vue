@@ -7,7 +7,7 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="brand-heading">
-            <img class="brand-icon" src="../assets/logo.png" alt="cenakrypto.sk">
+            <img class="brand-icon" src="/logo.png" alt="cenakrypto.sk">
             cenakrypto.sk
           </h1>
 
@@ -96,10 +96,6 @@
       </div>
     </section>
 
-    <section class="section container">
-      <steemit tag="crypto"></steemit>
-    </section>
-
     <section id="faq" class="section container crypto-faq">
       <h2 class="title">Čo je kryptomena?</h2>
       <p>
@@ -129,8 +125,6 @@ Kryptomeny nie sú ovládané žiadnou inštitúciou, bankou a ani štátom a ne
       <p>
         Krypto mince (coins) sa uchovávajú v takzvaných digitálnych peňaženkách (wallets). Peňaženka sa skladá z dvoch kľúčov, verejný a súkromný. Verejný kľúč je adresa na ktorú Vám niekto može poslať mince. Privátny kľúč je niečo ako heslo ktoré overí, že ste vlastníkom danej peňaženky a dovolí Vám s ňou narábať a posielať z nej mince.
       </p>
-
-      <cta></cta>
     </section>
 
     <page-footer></page-footer>
@@ -273,7 +267,6 @@ export default {
 
   .currency-name {
     font-size: 1.2rem;
-    font-weight: 300;
   }
 
   .currency-name-long {
@@ -312,8 +305,7 @@ export default {
   }
 
   .currency-name {
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
   }
 
   .current-price {

@@ -4,7 +4,7 @@
       <div class="navbar-brand">
         <nuxt-link class="navbar-item brand-navbar-item" to="/">
           <span class="icon">
-            <img src="../assets/logo.png" alt="cenakrypto.sk">
+            <img src="/logo.png" alt="cenakrypto.sk">
           </span>
         </nuxt-link>
         <label class="navbar-burger burger" for="nav-toggle-state">
@@ -43,18 +43,9 @@
               </div>
             </autocomplete>
           </span>
-          <span class="navbar-item">
-            <button class="button cta-button" @click="show">
-              <span class="icon">
-                <i class="fas fa-exchange-alt" />
-              </span>
-              <span>Kúpiť kryptomeny</span>
-            </button>
-          </span>
         </div>
       </div>
     </div>
-    <v-dialog/>
   </nav>
 </template>
 
@@ -76,7 +67,7 @@ export default {
     this.loadCoins();
 
     autocompleteBus.$on("autocomplete-select", selectedValue => {
-      this.$router.replace({ name: "coin", params: { coin: selectedValue } });
+      this.$router.push({ name: "coin-symbol", params: { symbol: selectedValue } });
     });
   },
   methods: {

@@ -3,7 +3,8 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'cenakrypto',
+    title: 'Aktuálna cena Bitcoin, Ethereum a iných kryptomien | cenakrypto.sk',
+    titleTemplate: '%s | cenakrypto.sk',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
