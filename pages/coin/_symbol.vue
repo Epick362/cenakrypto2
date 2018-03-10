@@ -206,7 +206,7 @@ export default {
 
       // chart.showLoading('Loading data from server...');
 
-      this.loadChart(this.$route.params.coin, apiRange)
+      this.loadChart(this.$route.params.symbol, apiRange)
       .then(() => {
         // chart.hideLoading();
       });

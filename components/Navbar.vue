@@ -18,9 +18,8 @@
 
       <div class="navbar-menu">
         <div class="navbar-start">
-          <a href="/#faq" class="navbar-item">Čo sú to kryptomeny?</a>
-          <nuxt-link class="navbar-item" :to="{name: 'list'}">
-            Zoznam kryptomien
+          <nuxt-link class="navbar-item" :to="{name: 'faq'}">
+            Čo sú to kryptomeny?
           </nuxt-link>
         </div>
         <div class="navbar-end">
