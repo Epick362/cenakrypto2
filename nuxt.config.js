@@ -7,12 +7,12 @@ module.exports = {
     titleTemplate: '%s | cenakrypto.sk',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Všetky informácie o kryptomenách, ktoré potrebujete. Aktuálne ceny, kapitalizácia a grafy.' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }, 
+      { hid: 'description', name: 'description', content: 'Všetky informácie o Bitcoin, Ethereum, Ripple a iných kryptomenách, ktoré potrebujete. Zoznam kryptomien, aktuálne ceny a grafy.' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Filip Hájek' },
       { property: 'og:type', content: 'profile' },
-      { property: 'og:title', content: 'Aktuálna cena Bitcoin, Ethereum a ďalších' },
+      { property: 'og:title', content: 'Aktuálne kurzy Bitcoin, Ethereum a ďalších' },
       { property: 'og:url', content: 'https://cenakrypto.sk/' },
       { property: 'og:image', content: 'https://cenakrypto.sk/apple-touch-icon.png' }
     ],
