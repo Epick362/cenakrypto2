@@ -1,4 +1,4 @@
-export const API_ROOT = 'http://127.0.0.1:3000/api';
+export const API_ROOT = 'https://cenakrypto.sk/api';
 
 export const ICON_LIST = {
     "act": "act",
