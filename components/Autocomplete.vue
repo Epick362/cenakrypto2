@@ -29,7 +29,8 @@
 </template>
 
 <script>
-import { autocompleteBus } from './autocompleteBus.js';
+import Fuse from 'fuse.js'
+import { autocompleteBus } from './autocompleteBus.js'
 
 export default {
     data () {
@@ -47,12 +48,22 @@ export default {
             if (this.search.length <= this.threshold) {
                 return [];
             } else {
-                return this.entries.filter((entry) => {
-                    if (this.ignoreCase) {
-                        return entry[this.property].toLowerCase().indexOf(this.search.toLowerCase()) > -1;
-                    }
-                    return entry[this.property].indexOf(this.search) > -1;
-                });
+                var options = {
+                  shouldSort: true,
+                  threshold: 0.7,
+                  location: 0,
+                  distance: 50,
+                  maxPatternLength: 32,
+                  minMatchCharLength: 1,
+                  keys: [
+                    "fullName",
+                    "symbol"
+                  ]
+                };
+                var fuse = new Fuse(this.entries, options); // "list" is the item array
+                var result = fuse.search(this.search);
+
+                return result;
             }
         },
         hasSuggestions () {
