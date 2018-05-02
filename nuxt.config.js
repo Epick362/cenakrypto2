@@ -7,7 +7,7 @@ module.exports = {
     titleTemplate: '%s | cenakrypto.sk',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }, 
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Všetky informácie o Bitcoin, Ethereum, Ripple a iných kryptomenách, ktoré potrebujete. Zoznam kryptomien, aktuálne ceny a grafy.' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Filip Hájek' },
@@ -22,7 +22,8 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/manifest.json' },
-      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5642c8' }
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5642c8' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.10/css/all.css', integrity: 'sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg', crossorigin: 'anonymous' }
     ]
   },
   /*
@@ -30,7 +31,7 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   plugins: [
-    '~/plugins/formatNumbers', 
+    '~/plugins/formatNumbers',
     '~/plugins/buefy',
     {src: '~/plugins/highcharts', ssr: false}
   ],
